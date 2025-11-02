@@ -1,0 +1,251 @@
+campus 1
+interface fa0/0
+ip address 172.10.255.254 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/3/0 
+ip address 172.80.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+interface se0/3/1
+ip address 172.90.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+campus 2
+
+interface fa0/0
+ip address 172.20.255.254 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/3/0 
+ip address 172.100.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+interface se0/3/1
+ip address 172.90.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+
+campus 3
+
+interface fa0/0
+ip address 172.30.255.254 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/3/0 
+ip address 172.110.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+interface se0/3/1
+ip address 172.120.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+
+campus 4
+
+interface fa0/0
+ip address 172.40.255.254 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/3/0 
+ip address 172.130.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+interface se0/3/1
+ip address 172.120.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+
+campus 5
+
+interface se0/2/0
+ip address 172.110.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/2/1 
+ip address 172.130.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/3/0
+ip address 172.160.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+campus 6
+
+interface fa0/0
+ip address 172.50.255.254 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/3/0 
+ip address 172.150.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+interface se0/3/1
+ip address 172.70.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+campus 7
+
+interface fa0/0
+ip address 172.60.255.254 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/3/0 
+ip address 172.140.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+interface se0/3/1
+ip address 172.70.0.1 255.255.0.0
+clock rate 64000
+no shut 
+do wr
+exit
+
+
+campus 8
+interface se0/1/0
+ip address 172.80.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/1/1 
+ip address 172.100.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/2/0
+ip address 172.140.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/2/1
+ip address 172.150.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+interface se0/3/0 
+ip address 172.160.0.2 255.255.0.0
+no shut 
+do wr
+exit
+
+Dynamic Routing ALgorithm
+
+campus 1
+
+router ospf 1
+network 172.10.0.0 0.0.255.255 area 1
+network 172.80.0.0 0.0.255.255 area 1
+network 172.90.0.0 0.0.255.255 area 1
+exit
+
+campus 2
+
+router ospf 2
+network 172.20.0.0 0.0.255.255 area 1
+network 172.90.0.0 0.0.255.255 area 1
+network 172.100.0.0 0.0.255.255 area 1
+exit
+
+campus 3
+
+router ospf 3
+network 172.30.0.0 0.0.255.255 area 1
+network 172.110.0.0 0.0.255.255 area 1
+network 172.120.0.0 0.0.255.255 area 1
+exit
+
+campus 4
+
+router ospf 4
+network 172.40.0.0 0.0.255.255 area 1
+network 172.120.0.0 0.0.255.255 area 1
+network 172.130.0.0 0.0.255.255 area 1
+exit
+
+
+campus 5
+router ospf 5
+network 172.110.0.0 0.0.255.255 area 1
+network 172.130.0.0 0.0.255.255 area 1
+network 172.160.0.0 0.0.255.255 area 1
+exit
+
+campus 6
+
+router ospf 6
+network 172.50.0.0 0.0.255.255 area 1
+network 172.150.0.0 0.0.255.255 area 1
+network 172.70.0.0 0.0.255.255 area 1
+exit
+
+campus 7
+router ospf 7
+network 172.60.0.0 0.0.255.255 area 1
+network 172.140.0.0 0.0.255.255 area 1
+network 172.70.0.0 0.0.255.255 area 1
+exit
+
+
+campus 8
+router ospf 8
+network 172.80.0.0 0.0.255.255 area 1
+network 172.100.0.0 0.0.255.255 area 1
+network 172.140.0.0 0.0.255.255 area 1
+network 172.150.0.0 0.0.255.255 area 1
+network 172.160.0.0 0.0.255.255 area 1
+exit
+
